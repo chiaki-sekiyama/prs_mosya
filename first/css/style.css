@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/*命名規則：BEM　苦手そうだったので選んでみました*/
+
+/*共通部分*/
+html {
+  font-size: 100%;
+}
+
+body, header, nav, ul, li, img, p {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.inner {
+  width: 1100px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+}
+
+h1, h2, h3, p {
+  color: #333333;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*ヘッダー*/
+header {
+  background: #ffffff;
+  width: 100%;
+}
+
+.header__inner {
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #333333;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 2px 20px;
+}
+
+.header__main-nav {
+  display: flex;
+}
+
+.header__main-nav li {
+  margin-right: 30px;
+  font-size: 14px;
+}
+
+.header__main-nav li:last-child {
+  margin-right: 0;
+}
+
+/*main*/
+.keyvisual {
+  height: 600px;
+}
+
+.keyvisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*content*/
+section {
+  margin-bottom: 70px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+.content__title-area {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.content__title-area h1 {
+  display: inline-block;
+  font-size: 32px;
+  border-bottom: solid 1px #333333;
+}
+
+/*about*/
+.about__main-area {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.about__icon img {
+  border-radius: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+.about__text-area {
+  float: left;
+}
+
+.about__sub-title {
+  font-size: 16px;
+  text-align: left;
+}
+
+.about__text {
+  font-size: 14px;
+  text-align: left;
+}
+
+/*bicycle*/
+.card-area__list {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-area__list li {
+  margin-right: 18px;
+}
+
+.card-area__list li:last-child {
+  margin-right: 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.card-area__text {
+  font-size: 14.5px;
+}
+
+/*footer*/
+footer {
+  text-align: center;
+  margin-top: 100px;
+  padding: 10px 0;
+}
+
+.copyright {
+  font-size: 10px;
+}
+
+/*ーーーーーーメディアクエリ-TABーーーーーー*/
+@media screen and (max-width: 960px) {
+  #about, #bicycle {
+    padding-right: 20px;
+  }
+  .card-area__list-bg img {
+    width: 28.125vw;
+  }
+}
+/*ーーーーーーメディアクエリ-SPーーーーーー*/
+
+@media screen and (max-width: 640px) {
+  .about__main-area {
+    display: block;
+    text-align: center;
+  }
+
+  .card-area__list {
+    display: block;
+    text-align: center;
+  }
+
+  .card-area__list-bg img {
+    width: 90.625vw;
+  }
+
+  .card-area__list li {
+    margin-right: 0;
+  }
+}
