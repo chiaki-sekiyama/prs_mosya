@@ -6,31 +6,33 @@ html {
   font-size: 100%;
 }
 
-body, header, nav, ul, li, img, p {
+body, header, nav, ul, li, img, p, h1, h2, h3 {
   margin: 0;
   padding: 0;
 }
 
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+body {
+  color: #383e45;
+  font-size: 0.9rem;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
-ul {
+img {
+  max-width: 100%;
+}
+
+li {
   list-style: none;
 }
 
 .inner {
-  width: 1100px;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 3%;
+  max-width: 960px;
+  margin: 0 auto 100px auto;
+  padding: 0 4%;
+  text-align: center;
 }
 
 h1, h2, h3, p {
@@ -43,160 +45,130 @@ body {
 }
 
 /*ヘッダー*/
-header {
-  background: #ffffff;
-  width: 100%;
-}
-
-.header__inner {
-  max-width: 90%;
+#header {
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header__logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #333333;
-  display: inline-block;
-  margin: 10px 0;
-  padding: 2px 20px;
+.header__site-title {
+  width: 120px;
+  line-height: 1px;
+  padding: 10px 0;
 }
 
-.header__main-nav {
+.header__site-title a {
+  display: block;
+}
+
+#header ul {
   display: flex;
 }
 
-.header__main-nav li {
-  margin-right: 30px;
-  font-size: 14px;
+#header li {
+  margin-left: 30px;
 }
 
-.header__main-nav li:last-child {
-  margin-right: 0;
+#header li a {
+  color: #24292e;
+}
+
+#header li a:hover {
+  opacity: 0.7;
 }
 
 /*main*/
-.keyvisual {
-  height: 600px;
+#keyvisual {
+  margin-bottom: 80px;
 }
 
-.keyvisual img {
+#keyvisual img {
   width: 100%;
-  height: 100%;
+  max-width: 1920px;
+  height: 600px;
   object-fit: cover;
 }
 
 /*content*/
-section {
-  margin-bottom: 70px;
-}
-
-section:last-child {
-  margin-bottom: 0;
-}
-
-.content__title-area {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.content__title-area h1 {
+.section__title {
   display: inline-block;
-  font-size: 32px;
-  border-bottom: solid 1px #333333;
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2rem;
+  border-bottom: solid 1px #383e45;
+}
+
+.content-title {
+  font-size: 1rem;
+  margin: 10px 0;
 }
 
 /*about*/
-.about__main-area {
-  max-width: 540px;
-  margin: 0 auto;
+.about__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.about__icon img {
-  border-radius: 50px;
-  float: left;
-  margin-right: 20px;
-}
-
-.about__text-area {
-  float: left;
-}
-
-.about__sub-title {
-  font-size: 16px;
-  text-align: left;
+#about img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
 }
 
 .about__text {
-  font-size: 14px;
   text-align: left;
 }
 
 /*bicycle*/
-.card-area__list {
+#bicycle ul {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
 }
 
-.card-area__list li {
-  margin-right: 18px;
-}
-
-.card-area__list li:last-child {
-  margin-right: 0;
-}
-
-h3 {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.card-area__text {
-  font-size: 14.5px;
+#bicycle li {
+  width: 32%;
 }
 
 /*footer*/
-footer {
+#footer {
   text-align: center;
-  margin-top: 100px;
   padding: 10px 0;
+  font-size: 0.5rem;
 }
 
-.copyright {
-  font-size: 10px;
-}
-
-/*ーーーーーーメディアクエリ-TABーーーーーー*/
-@media screen and (max-width: 960px) {
-  #about, #bicycle {
-    padding-right: 20px;
-  }
-  .card-area__list-bg img {
-    width: 28.125vw;
-  }
-}
 /*ーーーーーーメディアクエリ-SPーーーーーー*/
 
-@media screen and (max-width: 640px) {
-  .about__main-area {
-    display: block;
-    text-align: center;
+@media screen and (max-width: 600px) {
+  #keyvisual img {
+    height: calc(100vh - 60px);
   }
 
-  .card-area__list {
-    display: block;
-    text-align: center;
+  .about__content {
+    flex-direction: column;
   }
 
-  .card-area__list-bg img {
-    width: 90.625vw;
-  }
-
-  .card-area__list li {
+  #about img {
     margin-right: 0;
   }
+
+  #bicycle ul {
+    flex-direction: column;
+  }
+
+  #bicycle li {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
+
+/*------------------------
+反省点などメモ
+・pxで大体の大きさは合っていたが、remへの置き換えができていなかった
+・flexをより柔軟に使う→ちょっと頭堅かった
+・命名規則を気にしすぎて、クラス名をつけすぎた、、、？
+　＆divなどで必要以上に囲ってしまいコード量が増えた気がする
+・形は真似できても中身の効率がよくない、デベロッパ開いたら予想以上にスッキリしていてびっくり
+------------------------*/
