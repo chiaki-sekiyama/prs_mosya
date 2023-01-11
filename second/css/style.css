@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/*命名規則：OOCSS*/
+
+/*共通部分*/
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #000000;
+  font-family: "Arial", Helvetica, sans-serif;
+  /*font-size*/
+}
+
+body, footer, section, nav, img, ul, ol, li, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
+/*mainvisual*/
+
+#mainvisual img {
+  width: 50vw;
+  height: 700px;
+  object-fit: cover;
+}
+
+/*recipe*/
+#recipe {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 40px 5% 0 5%;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid #c0c0c0;
+  margin: 40px 0 20px 0;
+  padding-bottom: 5px;
+}
+
+#recipe li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #c0c0c0;
+}
+/*ラインが間で切れちゃう、アイデア思いつかず、、、*/
+
+#recipe ul li:nth-child(n + 6) {
+  text-align: right;
+}
+
+#recipe ul {
+  column-count: 2;
+}
+
+ol li {
+  margin-left: 20px;
+}
+
+/*btn*/
+.btn {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.btn a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 18px 60px;
+  border: 1px solid #000000;
+}
+
+/*footer*/
+
+#footer {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.sns {
+  display: flex;
+  justify-content: center;
+}
+
+.sns li {
+  font-size: 0.75rem;
+  margin-right: 20px;
+}
+
+.sns li:last-child {
+  margin-right: 0;
+}
+
+#footer p {
+  font-size: 0.75rem;
+  padding: 18px 0;
+}
+
+@media screen and (max-width: 840px) {
+  .flex {
+    display: block;
+  }
+
+  #mainvisual img {
+    width: 100vw;
+    height: auto;
+  }
+
+  #recipe {
+    width: 100%;
+  }
+}
