@@ -7,12 +7,11 @@ html {
 }
 
 body {
-  color: #000000;
-  font-family: "Arial", Helvetica, sans-serif;
-  /*font-size*/
+  color: #2b2a27;
+  font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Meiryo", sans-serif;
 }
 
-body, footer, section, nav, img, ul, ol, li, h1, h2, p {
+body, footer, section, nav, img, ul, ol, li, h1, h2, p, dl, dt, dd {
   margin: 0;
   padding: 0;
 }
@@ -30,65 +29,76 @@ ul {
   list-style: none;
 }
 
-.flex {
-  display: flex;
-}
-
 body {
   overflow-x: hidden;
   overflow-y: scroll;
   margin: 0 auto;
 }
 
-/*mainvisual*/
+.flex {
+  display: flex;
+  margin-bottom: 60px;
+}
 
-#mainvisual img {
-  width: 50vw;
+/*mainvisual*/
+.mainvisual {
+  width: 50%;
+}
+
+.mainvisual img {
+  width: 100%;
   height: 700px;
   object-fit: cover;
+  vertical-align: bottom;
 }
 
 /*recipe*/
-#recipe {
+.recipe {
   box-sizing: border-box;
   width: 50%;
   padding: 40px 5% 0 5%;
 }
 
-h1 {
+.main-title {
   font-size: 1.75rem;
   margin-bottom: 20px;
 }
 
-h2 {
+.content-title {
   font-size: 1.25rem;
-  border-bottom: 1px solid #c0c0c0;
-  margin: 40px 0 20px 0;
+  border-bottom: 1px solid #ccc;
+  margin: 40px 0 15px 0;
   padding-bottom: 5px;
 }
 
-#recipe li {
-  padding: 6px 0;
-  border-bottom: 1px dotted #c0c0c0;
+.recipe .ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
 }
-/*ラインが間で切れちゃう、アイデア思いつかず、、、*/
 
-#recipe ul li:nth-child(n + 6) {
+.recipe .ingredient-list dt {
+  width: 85%;
+  border-bottom: 1px dotted #ccc;
+  padding: 6px 0;
+}
+
+.recipe .ingredient-list dd {
+  width: 15%;
+  border-bottom: 1px dotted #ccc;
+  padding: 6px 0;
   text-align: right;
 }
 
-#recipe ul {
-  column-count: 2;
-}
-
-ol li {
+.recipe .step-list li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
   margin-left: 20px;
 }
 
 /*btn*/
 .btn {
   text-align: center;
-  margin-top: 60px;
+  margin-bottom: 80px;
 }
 
 .btn a {
@@ -96,46 +106,52 @@ ol li {
   text-decoration: none;
   font-size: 0.875rem;
   padding: 18px 60px;
-  border: 1px solid #000000;
+  border: 1px solid #2b2a27;
 }
 
 /*footer*/
 
 #footer {
-  margin-top: 90px;
   text-align: center;
+  font-size: 0.75rem;
+  padding: 20px;
 }
 
 .sns {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .sns li {
-  font-size: 0.75rem;
-  margin-right: 20px;
+  margin: 0 10px;
 }
 
-.sns li:last-child {
-  margin-right: 0;
-}
-
-#footer p {
-  font-size: 0.75rem;
-  padding: 18px 0;
-}
-
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 834px) {
   .flex {
-    display: block;
+    flex-direction: column;
   }
 
-  #mainvisual img {
-    width: 100vw;
+  .mainvisual {
+    width: 100%;
+  }
+
+  .mainvisual img {
     height: auto;
   }
 
-  #recipe {
+  .recipe {
     width: 100%;
   }
 }
+
+/*反省点、メモなど
+・marginをtopでとりがち
+見本が基本bottomなのでbottomのほうがいいかも？
+・色をお手本通りにするの難しい、真っ黒ではないとはおもったけど、、
+・font-family、左のほうが優先順位上
+・画像はアプローチは少々異なったけど、
+やろうとしていることは同じだったかも
+・せっかくつけたクラス名を使い忘れてた、、h1、h2
+・dl、dt、ddタグとの出会い←定義、説明
+*/
