@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+/*命名規則：OOCSS*/
+
+/*共通部分*/
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #2d2d2d;
+  font-family: "Crimson Text", serif;
+}
+/*ブラウザのWhatFontで確認*/
+
+body, header, nav, ul, li, img, p, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+/*header*/
+.mainvisual {
+  margin-bottom: 25px;
+}
+
+.mainvisual img {
+  width: 90%;
+  margin: 4vw auto 0 auto;
+  object-fit: cover;
+}
+
+.nav {
+  max-width: 1350px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.site-name {
+  font-size: 1rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin-right: 40px;
+}
+
+.nav ul {
+  display: flex;
+  font-size: 0.875rem;
+}
+
+.nav li {
+  margin-right: 30px;
+}
+
+/*main*/
+#concept {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+#work {
+  display: flex;
+  margin-bottom: 70px;
+}
+
+.img {
+  width: 50%;
+}
+
+.text-container {
+  width: 50%;
+  position: relative;
+}
+
+.text-area {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section-title {
+  font-size: 1.5rem;
+}
+
+.section-subtitle {
+  margin-bottom: 20px;
+}
+
+.section-subtitle, .text-area p {
+  font-size: 1rem;
+}
+
+/*footer*/
+#footer .site-name {
+  margin-right: 0;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 2%;
+}
+
+#footer p {
+  font-size: 0.875rem;
+}
+
+/*メディアクエリ*/
+@media screen and (max-width:768px) {
+  .mainvisual {
+    margin-bottom: 20px;
+  }
+
+  .mainvisual img {
+    width: 100%;
+    height: 390px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  .nav {
+    padding: 0 2%;
+  }
+
+  #concept {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+
+  #work {
+    flex-direction: column-reverse;
+    margin-bottom: 70px;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  section .img {
+    margin-bottom: 10px;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .text-area {
+    width: 100%;
+    position: static;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .text-area br:nth-child(odd) {
+    display: none;
+  }
+}
