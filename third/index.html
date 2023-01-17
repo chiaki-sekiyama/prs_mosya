@@ -7,62 +7,56 @@
   <meta name="description" content="アクセサリー">
   <title>課題3</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="mainvisual">
-      <img src="./image/mainvisual.png" alt="mainvisual">
-    </div>
-    <div class="inner nav">
-      <h1 class="site-name">
-        <a href="#">Wooden Jewelry</a>
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="#concept">Concept</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <div id="mainvisual">
+    <img src="./image/mainvisual.png" alt="mainvisual">
+  </div>
+  <header id="header">
+    <h1 class="site-title">
+      <a href="#"><img src="./image/logo.png" alt="Wooden Jewelry"></a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="mailto:xxxxx@xxx.xxx.com?subject=お問い合わせ">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <section id="concept" class="inner">
-      <div class="img">
-        <img src="./image/concept.png" alt="concept">
-      </div>
-      <div class="text-container">
+  <div class="container">
+    <main>
+      <section id="concept" class="content">
+        <div class="img">
+          <img src="./image/concept.png" alt="concept">
+        </div>
         <div class="text-area">
           <h2 class="section-title">私たちの考えるジュエリーとは</h2>
-          <h3 class="section-subtitle">Concept</h3>
-          <p>テキストテキストテキストテキストテキスト<br>
-            テキストテキストテキストテキスト<br>
-            テキストテキストテキストテキストテキスト<br>
-            テキストテキストテキストテキスト
-          </p>
+          <span class="section-title-en">Concept</span>
+          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
         </div>
-      </div>
-    </section>
-    <section id="work" class="inner">
-      <div class="text-container">
+      </section>
+      <section id="work" class="content">
         <div class="text-area">
           <h2 class="section-title">ハンドメイドにこだわる理由</h2>
-          <h3 class="section-subtitle">Work</h3>
-          <p>テキストテキストテキストテキストテキスト<br>
-            テキストテキストテキストテキスト<br>
-            テキストテキストテキストテキストテキスト<br>
-            テキストテキストテキストテキスト
-          </p>
+          <span class="section-title-en">Work</span>
+          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
         </div>
+        <div class="img">
+          <img src="./image/work.png" alt="work">
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="logo">
+        <img src="./image/logo.png" alt="Wooden Jewelry">
       </div>
-      <div class="img">
-        <img src="./image/work.png" alt="work">
-      </div>
-    </section>
-  </main>
-  <footer id="footer" class="inner">
-    <h1 class="site-name">Wooden Jewelry</h1>
-    <p>© 2021 Wooden Jewelry</p>
-  </footer>
+      <p>© 2021 Wooden Jewelry</p>
+    </footer>
+  </div>
 </body>
 </html>

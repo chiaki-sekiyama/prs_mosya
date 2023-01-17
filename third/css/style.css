@@ -13,7 +13,7 @@ body {
 }
 /*ブラウザのWhatFontで確認*/
 
-body, header, nav, ul, li, img, p, h1, h2, h3 {
+body, header, nav, ul, li, img, p, h1, h2, span {
   margin: 0;
   padding: 0;
 }
@@ -25,7 +25,7 @@ a {
 
 img {
   max-width: 100%;
-  display: block;
+  vertical-align: bottom;
 }
 
 ul {
@@ -37,157 +37,140 @@ body {
   overflow-y: scroll;
 }
 
-.inner {
-  max-width: 960px;
+.container {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2%;
+  padding: 0 18px;
 }
 
-h1, h2, h3 {
-  font-weight: 400;
+.site-title {
+  width: 110px;
+  line-height: 1px;
+  margin-right: 50px;
 }
 
-/*header*/
-.mainvisual {
-  margin-bottom: 25px;
-}
-
-.mainvisual img {
-  width: 90%;
-  margin: 4vw auto 0 auto;
-  object-fit: cover;
-}
-
-.nav {
-  max-width: 1350px;
-  padding: 0 5%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.site-name {
-  font-size: 1rem;
-  font-family: "Helvetica", "Arial", sans-serif;
-  margin-right: 40px;
-}
-
-.nav ul {
-  display: flex;
-  font-size: 0.875rem;
-}
-
-.nav li {
-  margin-right: 30px;
-}
-
-/*main*/
-#concept {
-  display: flex;
-  margin-bottom: 60px;
-}
-
-#work {
-  display: flex;
-  margin-bottom: 70px;
-}
-
-.img {
-  width: 50%;
-}
-
-.text-container {
-  width: 50%;
-  position: relative;
-}
-
-.text-area {
-  width: 70%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.site-title a {
+  display: block;
 }
 
 .section-title {
   font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 4px;
 }
 
-.section-subtitle {
-  margin-bottom: 20px;
+.section-title-en {
+  display: inline-block;
+  margin-bottom: 25px;
 }
 
-.section-subtitle, .text-area p {
-  font-size: 1rem;
+/*mainvisual*/
+#mainvisual {
+  width: 90vw;
+  margin: 4% auto 0 auto;
 }
 
-/*footer*/
-#footer .site-name {
+/*header*/
+#header {
+  width: 90vw;
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 30px auto;
+}
+
+#header ul {
+  display: flex;
+}
+
+#header li {
+  font-size: 0.875rem;
+  margin-right: 30px;
+}
+
+#header li:last-child {
   margin-right: 0;
 }
 
+/*main*/
+.content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.content .img {
+  width: 50%;
+}
+
+.content .text-area {
+  width: 50%;
+  padding: 0 7%;
+  box-sizing: border-box;
+}
+
+/*footer*/
 #footer {
   display: flex;
   justify-content: space-between;
-  padding: 15px 2%;
+  font-size: 0.875rem;
+  padding: 20px 0;
 }
 
-#footer p {
-  font-size: 0.875rem;
+#footer .logo {
+  width: 110px;
 }
 
 /*メディアクエリ*/
-@media screen and (max-width:768px) {
-  .mainvisual {
-    margin-bottom: 20px;
-  }
-
-  .mainvisual img {
-    width: 100%;
-    height: 390px;
-    margin: 0 auto;
-    object-fit: cover;
-  }
-
-  .nav {
-    padding: 0 2%;
-  }
-
-  #concept {
-    flex-direction: column;
-    margin-bottom: 60px;
-  }
-
-  #work {
-    flex-direction: column-reverse;
-    margin-bottom: 70px;
-  }
-
-  .img {
-    width: 100%;
-  }
-
-  section .img {
-    margin-bottom: 10px;
-  }
-
-  .text-container {
-    width: 100%;
-  }
-
-  .text-area {
-    width: 100%;
-    position: static;
-    left: 0;
-    top: 0;
-    transform: translate(0, 0);
-  }
-
+@media screen and (max-width:767px) {
   .section-title {
     font-size: 1.25rem;
   }
 
-  .text-area br:nth-child(odd) {
-    display: none;
+  #mainvisual {
+    width: 100%;
+    margin: 0;
+  }
+
+  #mainvisual img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  #header {
+    width: 100%;
+    padding: 20px 18px;
+  }
+
+  #work {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .content .img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .content .text-area {
+    width: 100%;
+    padding: 0;
   }
 }
+
+/*反省点、メモなど
+・innerでmain、 foooterの幅を指定していたが、
+外からまとめてcontainerで囲む方法もあるのか、、、
+・concept、workにそれぞれdisplay:flex、margin-bottomを指定していた
+同じクラスを付与してスタイルの再利用
+・margin打消し忘れ
+・CSSをよりスッキリ書けるようにしたい、、
+・サイトロゴ画像だった、カーソル合わせて確認しよう
+・画像の縦のレスポンシブも意識する
+・Crimson Textの見え方が違ったので、最後にHTMLにgooglefontsのlinkを追加しました
+　→preconnectを指定することで外部リンクのネットワーク接続を事前に行う指定
+*/
