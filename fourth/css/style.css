@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+/*命名規則：OOCSS*/
+
+/*共通部分*/
+html {
+  font-size: 100%;
+}
+
+body, header, nav, ul, li, img, p, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #2a2a2a;
+  font-family: "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meirio, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+h2, h3, h4, .content p {
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 	0.875rem;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.content-title {
+  font-size: 1.25rem;
+}
+
+/*header*/
+#header {
+  background: url(../image/mainvisual.png) no-repeat center/cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+#header .logo {
+  width: 130px;
+  position: absolute;
+  top: 30px;
+  right: 45px;
+}
+
+/*main*/
+.newspaper {
+  text-align: center;
+}
+
+.newspaper .flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.content {
+  position: relative;
+  color: #ffffff;
+}
+
+.content .text {
+  width: 300px;
+  padding: 20px 0;
+  background: #2a2a2a;
+  opacity: 0.7;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.archive {
+  margin-right: 20px;
+}
+
+/*fashion&style*/
+.fashion {
+  background: url(../image/fashion.png) no-repeat center/cover;
+  height: 500px;
+  margin-bottom: 80px;
+  text-align: center;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.btn a {
+  display: inline-block;
+  border: 1px solid #2a2a2a;
+  font-size: 0.75rem;
+  padding: 15px 40px;
+  margin-top: 30px;
+}
+
+/*catalog-antique*/
+.catalog-antique {
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.catalog-antique .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.catalog-antique .section-title {
+  margin-bottom: 40px;
+}
+
+.catalog-antique .item {
+  width: 48%;
+  padding: 2%;
+}
+
+.catalog-antique p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.catalog-antique p:last-child {
+  margin-bottom: 0;
+}
+
+/*footer*/
+#footer {
+  background: #333333;
+  color: #ffffff;
+}
+
+#footer .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 105px 50px;
+  text-align: left;
+}
+
+#footer img {
+  width: 130px;
+}
+
+#footer .footer-item {
+  width: 33%;
+}
+
+#footer h4 {
+  margin-bottom: 15px;
+}
+
+#footer ul {
+  list-style: "-";
+}
+
+#footer li, #footer p {
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+#footer .copyright {
+  background: #ffffff;
+  color: #000000;
+  padding: 25px 0;
+  text-align: center;
+}
+
+@media screen and (max-width:870px) {
+  .newspaper .flex {
+    flex-direction: column;
+  }
+
+  .archive {
+    margin-right: 0px;
+    margin-bottom: 35px;
+  }
+
+  .fashion {
+    padding-top: 40px;
+    margin-bottom: 45px;
+  }
+
+  .catalog-antique {
+    padding: 20px 0;
+  }
+
+  .catalog-antique .flex {
+    flex-direction: column;
+  }
+
+  .catalog-antique .item {
+    width: 100%;
+  }
+
+  #footer .flex {
+    flex-direction: column;
+    padding: 30px 0;
+  }
+
+  #footer .footer-item {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  #footer .footer-item:first-child {
+    text-align: center;
+  }
+}
+
+/*反省点、メモ
+・ブラウザのColor Zillaで色を調べれた
+・catalog-antiqueの余白めちゃ手こずった、、
+クエリ後の余白も微妙。
+*/
