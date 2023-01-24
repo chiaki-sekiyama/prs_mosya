@@ -7,7 +7,7 @@ html {
   font-size: 100%;
 }
 
-body, header, nav, ul, li, img, p, h1, h2, h3, h4 {
+body, header, nav, ul, li, img, p, h1, h2 {
   margin: 0;
   padding: 0;
 }
@@ -15,6 +15,7 @@ body, header, nav, ul, li, img, p, h1, h2, h3, h4 {
 body {
   color: #2a2a2a;
   font-family: "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meirio, sans-serif;
+  font-size: 0.875rem;
 }
 
 img {
@@ -31,13 +32,13 @@ a:hover {
   opacity: 0.7;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   overflow-x: hidden;
   overflow-y: scroll;
-}
-
-h2, h3, h4, .content p {
-  font-weight: 700;
 }
 
 .section-title {
@@ -45,98 +46,90 @@ h2, h3, h4, .content p {
   margin-bottom: 20px;
 }
 
-p {
-  font-size: 	0.875rem;
-}
-
 .wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 4%;
-}
-
-.content-title {
-  font-size: 1.25rem;
+  padding: 0 5%;
 }
 
 /*header*/
 #header {
   background: url(../image/mainvisual.png) no-repeat center/cover;
-  width: 100vw;
   height: 100vh;
   position: relative;
   margin-bottom: 80px;
 }
 
-#header .logo {
-  width: 130px;
+#header .site-title {
   position: absolute;
   top: 30px;
-  right: 45px;
+  right: 30px;
 }
 
 /*main*/
-.newspaper {
+#newspaper {
   text-align: center;
-}
-
-.newspaper .flex {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
   margin-bottom: 80px;
 }
 
-.content {
+#newspaper .flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+#newspaper .flex .item .title {
+  font-size: 1.25rem;
+  margin-bottom: 2px;
+}
+
+#newspaper .flex .item {
   position: relative;
+  width: 49%;
+}
+
+#newspaper .flex .item .text {
+  max-width: 290px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
-}
-
-.content .text {
-  width: 300px;
-  padding: 20px 0;
-  background: #2a2a2a;
-  opacity: 0.7;
-  box-sizing: border-box;
+  padding: 15px 0;
+  margin: 0 auto;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.archive {
-  margin-right: 20px;
+  top: 40%;
+  left: 0;
+  right: 0;
 }
 
 /*fashion&style*/
-.fashion {
+#fashion {
   background: url(../image/fashion.png) no-repeat center/cover;
-  height: 500px;
+  height: 520px;
   margin-bottom: 80px;
   text-align: center;
   padding-top: 60px;
   box-sizing: border-box;
 }
 
-.btn a {
+.btn {
+  color: #2a2a2a;
   display: inline-block;
   border: 1px solid #2a2a2a;
   font-size: 0.75rem;
-  padding: 15px 40px;
+  padding: 14px 36px;
   margin-top: 30px;
 }
 
 /*catalog-antique*/
 .catalog-antique {
   background: #f5f5f5;
-  text-align: center;
+  padding: 60px 0;
 }
 
 .catalog-antique .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
 }
 
 .catalog-antique .section-title {
@@ -145,77 +138,86 @@ p {
 
 .catalog-antique .item {
   width: 48%;
-  padding: 2%;
+  text-align: center;
 }
 
-.catalog-antique p {
+.catalog-antique .item img {
+  width: 100%;
+}
+
+.catalog-antique .item p {
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.catalog-antique p:last-child {
+.catalog-antique .item p:last-child {
   margin-bottom: 0;
 }
 
 /*footer*/
 #footer {
   background: #333333;
-  color: #ffffff;
+  font-size: 0.750rem;
 }
 
 #footer .flex {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 105px 50px;
-  text-align: left;
+  justify-content: space-between;
+  color: #ffffff;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 #footer img {
   width: 130px;
 }
 
-#footer .footer-item {
+#footer .item {
   width: 33%;
-}
-
-#footer h4 {
-  margin-bottom: 15px;
-}
-
-#footer ul {
-  list-style: "-";
-}
-
-#footer li, #footer p {
-  font-size: 0.75rem;
   line-height: 2;
+}
+
+#footer .item:first-child {
+  padding: 60px 0;
+}
+
+#footer .item li::before {
+  content: "-";
+  margin-right: 5px;
+}
+
+#footer .item .title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 #footer .copyright {
   background: #ffffff;
-  color: #000000;
-  padding: 25px 0;
+  padding: 30px 0;
   text-align: center;
 }
 
-@media screen and (max-width:870px) {
-  .newspaper .flex {
+@media screen and (max-width:896px) {
+  #newspaper .flex {
     flex-direction: column;
   }
 
-  .archive {
-    margin-right: 0px;
-    margin-bottom: 35px;
+  #newspaper .flex .item {
+    width: 100%;
   }
 
-  .fashion {
-    padding-top: 40px;
-    margin-bottom: 45px;
+  #newspaper .flex .item:first-child {
+    margin-bottom: 30px;
+  }
+
+  #fashion {
+    padding-top: 35px;
+    margin-bottom: 50px;
   }
 
   .catalog-antique {
-    padding: 20px 0;
+    padding: 30px 0;
   }
 
   .catalog-antique .flex {
@@ -226,18 +228,24 @@ p {
     width: 100%;
   }
 
-  #footer .flex {
-    flex-direction: column;
-    padding: 30px 0;
+  .catalog-antique .item:first-child {
+    margin-bottom: 60px;
   }
 
-  #footer .footer-item {
-    width: 90%;
+  #footer .flex {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  #footer .item {
+    width: 100%;
     margin-bottom: 30px;
   }
 
-  #footer .footer-item:first-child {
+  #footer .item:first-child {
     text-align: center;
+    padding: 0;
   }
 }
 
@@ -245,4 +253,8 @@ p {
 ・ブラウザのColor Zillaで色を調べれた
 ・catalog-antiqueの余白めちゃ手こずった、、
 クエリ後の余白も微妙。
+・classのつけ方が下手だからコードやタグが多くなりがち
+　item　のクラス名を使っていることでコード量が、、、
+・aやpタグにもクラスをつけて使いこなすべき
+・catalog-antiqueの囲い方がちょっと違った
 */
