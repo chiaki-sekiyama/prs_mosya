@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+/*命名規則：OOCSS*/
+
+html {
+  font-size: 100%;
+}
+
+body, header, nav, ul, li, img, p, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f0f0f0;
+  color: #000000;
+  font-family: Meirio;
+  font-size: 0.875rem;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.wrapper {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+}
+
+.sec-line {
+  border-top: 1px solid #000000;
+  width: 38px;
+  text-align: left;
+  margin: 30px auto 40px 0;
+}
+
+/*header*/
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+#header .navibar {
+  display: flex;
+  align-items: center;
+}
+
+#header .site-title {
+  width: 120px;
+  margin-right: 50px;
+}
+
+#header ul {
+  display: flex;
+}
+
+#header li {
+  margin-right: 30px;
+}
+
+#header li:last-child {
+  margin-right: 0;
+}
+
+#header .inquiry {
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.75rem;
+  height: 80px;
+  width: 200px;
+  line-height: 80px;
+  display: inline-block;
+  text-align: center;
+}
+
+#header .inquiry:hover {
+  background: #333333;
+}
+
+/*main*/
+#mainvisual {
+  margin-bottom: 70px;
+}
+
+#mainvisual img {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+#news, #about, #business, #company {
+  margin-bottom: 80px;
+}
+
+#news .news-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+#news .news-item .flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#news .news-item {
+  border-left: 1px solid #000000;
+  padding: 10px 60px 10px 20px;
+}
+
+#news .news-item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.label {
+  width: 2.25rem;
+  height: 1.25rem;
+  background: #000000;
+  color: #ffffff;
+  font-size: 	0.75rem;
+  padding: 0 7px;
+  margin-left: 15px;
+}
+
+#about {
+  display: flex;
+}
+
+#about .img {
+  width: 55%;
+}
+
+#about .img img {
+  width: 100%;
+  max-width: 810px;
+  height: 400px;
+}
+
+#about .text-area {
+  width: 45%;
+  box-sizing: border-box;
+  padding: 0 5%;
+  margin-top: 175px;
+}
+
+#about .text-area .text p {
+  line-height: 2;
+}
+
+#business .flex {
+  display: flex;
+  justify-content: center;
+}
+
+#business .title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#business .title::before {
+  content: "－";
+  font-weight: lighter;
+  margin-right: 10px;
+}
+
+#business .img {
+  width: 370px;
+  padding: 0 30px 40px 30px;
+}
+
+#business .flex .left-item {
+  margin-top: 100px;
+}
+
+#company .flex {
+  display: flex;
+  align-items: center;
+}
+
+#company img {
+  width: 630px;
+  height: 400px;
+}
+
+#company .img {
+  z-index: 1;
+  margin-left: -80px;
+}
+
+#company .text {
+  background: #ffffff;
+  padding: 80px 60px;
+  flex-basis: 60%;
+  box-sizing: border-box;
+}
+
+#company .text .company-source {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  line-height: 2;
+}
+
+#company .text .company-source dt {
+  flex-basis: 20%;
+}
+
+#company .text .company-source dd {
+  flex-basis: 80%;
+  margin-inline-start: 0;
+}
+
+/*footer*/
+#footer {
+  background: #ffffff;
+  padding-bottom: 20px;
+}
+
+#footer .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#footer .copyright {
+  font-size: 0.625rem;
+}
+
+@media screen and (max-width:900px) {
+  #header .navibar {
+    display: block;
+  }
+
+  #header .site-title {
+    width: 90px;
+    margin-right: 0;
+  }
+
+  #header .inquiry {
+    display: none;
+  }
+
+  #news .news-area {
+    flex-direction: column;
+  }
+
+  #news .news-item {
+    border-left: none;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  #news .news-item:last-child {
+    margin-bottom: 0;
+  }
+
+  #about {
+    display: block;
+  }
+
+  #about .img {
+    width: 100%;
+  }
+
+  #about .img img {
+    max-width: none;
+    margin-bottom: 20px;
+  }
+
+  #about .text-area {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  #business .flex {
+    display: block;
+  }
+
+  #business .flex .left-item {
+    margin-top: 0;
+  }
+
+  #business .img {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #business .img p {
+    text-align: left;
+  }
+
+  #company .flex {
+    flex-direction: column;
+  }
+
+  #company {
+    margin-bottom: 0;
+  }
+
+  #company img {
+    width: 100%;
+  }
+
+  #company .img {
+    z-index: auto;
+    margin-left: 0px;
+  }
+
+  #company .text {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  #footer .flex {
+    display: block;
+  }
+
+  #footer .flex .logo {
+    width: 90px;
+  }
+
+  #company .text .company-source {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  #company .text .company-source dd {
+    margin-inline-start: 0.875rem;
+    margin-bottom: 10px;
+  }
+
+  #company .text .company-source dd:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*反省点、メモ
+・画像作成の時に背景透明にできなかった、、、
+ツールで透明の指定にしたらつぶつぶが気持ち悪かったので諦めて白にしました
+*/
