@@ -6,7 +6,7 @@ html {
   font-size: 100%;
 }
 
-body, header, nav, ul, li, img, p, h1, h2 {
+body, header, nav, ul, li, img, p, h1, h2, dl, dt, dd {
   margin: 0;
   padding: 0;
 }
@@ -14,19 +14,18 @@ body, header, nav, ul, li, img, p, h1, h2 {
 body {
   background: #f0f0f0;
   color: #000000;
-  font-family: Meirio;
   font-size: 0.875rem;
 }
 
 img {
   max-width: 100%;
   vertical-align: bottom;
-  object-fit: cover;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #000000;
+  font-size: 0.875rem;
 }
 
 li {
@@ -39,24 +38,48 @@ body {
 }
 
 .wrapper {
-  max-width: 1050px;
+  max-width: 1032px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
   box-sizing: border-box;
 }
 
-.section-title {
-  font-size: 36px;
-  font-weight: 400;
-  letter-spacing: 0.3em;
+.logo {
+  width: 100px;
+  line-height: 1px;
+  margin-right: 60px;
 }
 
-.sec-line {
-  border-top: 1px solid #000000;
-  width: 38px;
-  text-align: left;
-  margin: 30px auto 40px 0;
+.logo a {
+  display: block;
+}
+
+.section-title {
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 50px;
+}
+
+.section-title::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #000000;
+  display: block;
+}
+
+.section-title .en {
+  display: block;
+  font-size: 2.25rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 10px;
+}
+
+.section-title .ja {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 36px;
 }
 
 /*header*/
@@ -67,29 +90,25 @@ body {
   height: 80px;
 }
 
-#header .navibar {
+#header .inner {
   display: flex;
   align-items: center;
 }
 
-#header .site-title {
-  width: 120px;
-  margin-right: 50px;
-}
-
-#header ul {
+#header .inner ul {
   display: flex;
+  align-items: center;
 }
 
-#header li {
+#header .inner li {
   margin-right: 30px;
 }
 
-#header li:last-child {
+#header .inner li:last-child {
   margin-right: 0;
 }
 
-#header .inquiry {
+#header .contact {
   background: #000000;
   color: #ffffff;
   font-size: 0.75rem;
@@ -100,57 +119,64 @@ body {
   text-align: center;
 }
 
-#header .inquiry:hover {
+#header .contact:hover {
   background: #333333;
 }
 
 /*main*/
 #mainvisual {
-  margin-bottom: 70px;
+  margin-bottom: 120px;
 }
 
 #mainvisual img {
   width: 100%;
   height: calc(100vh - 80px);
+  object-fit: cover;
 }
 
-#news, #about, #business, #company {
-  margin-bottom: 80px;
+#news {
+  margin-bottom: 120px;
 }
 
-#news .news-area {
+#news .list {
   display: flex;
   justify-content: space-between;
 }
 
-#news .news-item .flex {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+#news .list li {
+  width: calc(100%/3);
+  border-right: solid 1px #000000;
+  padding: 10px 20px;
 }
 
-#news .news-item {
-  border-left: 1px solid #000000;
-  padding: 10px 60px 10px 20px;
-}
-
-#news .news-item:first-child {
-  border-left: none;
+#news .list li:first-child {
   padding-left: 0;
 }
 
-.label {
-  width: 2.25rem;
-  height: 1.25rem;
+#news .list li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+#news .list li .date-area {
+  margin-bottom: 16px;
+}
+
+#news .list li .date-area span {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
   background: #000000;
   color: #ffffff;
+  display: inline-block;
   font-size: 	0.75rem;
-  padding: 0 7px;
-  margin-left: 15px;
+  margin-left: 10px;
+  text-align: center;
 }
 
 #about {
   display: flex;
+  margin-bottom: 120px;
 }
 
 #about .img {
@@ -159,82 +185,120 @@ body {
 
 #about .img img {
   width: 100%;
-  max-width: 810px;
   height: 400px;
+  object-fit: cover;
 }
 
 #about .text-area {
   width: 45%;
   box-sizing: border-box;
-  padding: 0 5%;
-  margin-top: 175px;
+  padding: 180px 5% 0 5%;
 }
 
-#about .text-area .text p {
-  line-height: 2;
+#about .text-area p {
+  line-height: 2.2;
+}
+
+#business {
+  margin-bottom: 120px;
 }
 
 #business .flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 10%;
 }
 
-#business .title {
+#business .flex .title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 0 0 10px 18px;
+  position: relative;
 }
 
-#business .title::before {
-  content: "－";
-  font-weight: lighter;
-  margin-right: 10px;
+#business .flex .title::before {
+  content: "";
+  width: 8px;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  left: -18px;
 }
 
-#business .img {
-  width: 370px;
-  padding: 0 30px 40px 30px;
+#business .flex .item {
+  margin-bottom: 50px;
 }
 
-#business .flex .left-item {
+#business .flex .item:last-child {
+  margin-bottom: 0;
+}
+
+#business .flex .left {
   margin-top: 100px;
+  width: 46%;
 }
 
-#company .flex {
+#business .flex .right {
+  width: 46%;
+}
+
+#company {
+  height: 750px;
   display: flex;
   align-items: center;
-}
-
-#company img {
-  width: 630px;
-  height: 400px;
-}
-
-#company .img {
-  z-index: 1;
-  margin-left: -80px;
+  position: relative;
 }
 
 #company .text {
+  width: 55%;
   background: #ffffff;
-  padding: 80px 60px;
-  flex-basis: 60%;
+  padding: 100px 8% 100px 6%;
+  position: absolute;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
 }
 
-#company .text .company-source {
+#company .img {
+  width: 53%;
+  position: absolute;
+  top: 115px;
+  right: 0;
+}
+
+#company .img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+#company .info {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  line-height: 2;
+  align-items: center;
 }
 
-#company .text .company-source dt {
-  flex-basis: 20%;
+#company .info dt {
+  width: 20%;
+  margin-top: 10px;
 }
 
-#company .text .company-source dd {
-  flex-basis: 80%;
+#company .info dt:first-of-type {
+  margin-top: 0;
+}
+
+#company .info dd {
+  width: 80%;
+  margin-top: 10px;
   margin-inline-start: 0;
+}
+
+#company .info dd:first-of-type {
+  margin-top: 0;
+}
+
+#company .info .add {
+  margin-left: 20%;
 }
 
 /*footer*/
@@ -247,8 +311,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 0;
+}
+
+#footer .flex .logo {
+  margin-right: 0;
 }
 
 #footer .copyright {
@@ -256,120 +323,171 @@ body {
 }
 
 @media screen and (max-width:900px) {
-  #header .navibar {
-    display: block;
+  .logo {
+    width: 80px;
+    margin: 8px 0;
   }
 
-  #header .site-title {
-    width: 90px;
-    margin-right: 0;
+  .section-title {
+    margin-bottom: 34px;
   }
 
-  #header .inquiry {
+  .section-title .ja {
+    margin-bottom: 24px;
+  }
+
+  #header .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #header .contact {
     display: none;
   }
 
-  #news .news-area {
+  #mainvisual {
+    margin-bottom: 80px;
+  }
+
+  #news {
+    margin-bottom: 80px;
+  }
+
+  #news .list {
     flex-direction: column;
   }
 
-  #news .news-item {
-    border-left: none;
-    padding: 0;
-    margin-bottom: 40px;
+  #news .list li {
+    width: 100%;
+    border-right: none;
+    padding: 10px 0;
+    margin-bottom: 20px;
   }
 
-  #news .news-item:last-child {
+  #news .list li:last-child {
     margin-bottom: 0;
   }
 
   #about {
-    display: block;
+    flex-direction: column;
+    margin-bottom: 80px;
   }
 
   #about .img {
     width: 100%;
+    margin-bottom: 30px;
   }
 
   #about .img img {
-    max-width: none;
-    margin-bottom: 20px;
+    height: 300px;
   }
 
   #about .text-area {
     width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+
+  #business {
+    margin-bottom: 80px;
   }
 
   #business .flex {
-    display: block;
-  }
-
-  #business .flex .left-item {
-    margin-top: 0;
-  }
-
-  #business .img {
-    width: 100%;
+    flex-direction: column;
     padding: 0;
+  }
+
+  #business .flex .left {
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
+
+  #business .flex .right {
+    width: 100%;
+  }
+
+  #business .flex .item {
     text-align: center;
     margin-bottom: 30px;
   }
 
-  #business .img p {
+  #business .flex .title {
     text-align: left;
   }
 
-  #company .flex {
-    flex-direction: column;
-  }
-
   #company {
-    margin-bottom: 0;
-  }
-
-  #company img {
-    width: 100%;
-  }
-
-  #company .img {
-    z-index: auto;
-    margin-left: 0px;
+    height: auto;
+    flex-direction: column;
+    position: static;
   }
 
   #company .text {
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    padding-left: 20px;
+    padding: 40px 20px;
     margin-bottom: 20px;
+    position: static;
+  }
+
+  #company .img {
+    width: 100%;
+    padding: 0;
+    position: static;
+  }
+
+  #company .info {
+    flex-direction: column;
+  }
+
+  #company .info dt {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #company .info dd {
+    width: 100%;
+    margin-top: 5px;
+    padding-left: 14px;
+  }
+
+  #company .info dd:first-of-type {
+    margin-top: 5px;
+  }
+
+  #company .info .add {
+    margin-left: 0;
   }
 
   #footer .flex {
-    display: block;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   #footer .flex .logo {
-    width: 90px;
-  }
-
-  #company .text .company-source {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
-  #company .text .company-source dd {
-    margin-inline-start: 0.875rem;
     margin-bottom: 10px;
-  }
-
-  #company .text .company-source dd:last-child {
-    margin-bottom: 0;
   }
 }
 
 /*反省点、メモ
 ・画像作成の時に背景透明にできなかった、、、
 ツールで透明の指定にしたらつぶつぶが気持ち悪かったので諦めて白にしました
+あとWEDの文字が小さい
+・h2のsection-titleで、spanを入れてまとめる
+・section-titleの下の下線hrじゃなかった
+・HTMLでのtimeタグについて
+→PC、エンジンへ日時を認識させる
+・spanを使いこなせてない気がする
+・newsの縦線右だったか～、あとはwidthの使い方！！
+すごい！ここでcalcは思いつかなかった！頭やわらか～、、
+・businessのタイトル前の横棒がハイフンじゃなくてショック、、、
+・companyのかぶせるやつちょっと違った、、、！
+positionとも迷ったけど、positionだった、残念
+・全体的に、width:100%などつけるべきところがちょっとずれてたりしてて、
+結果コードがすっきりしなくなってた気がする
+うーん、経験、、、
+・flexを縦にするときはcolumnで統一
+
+○なんか違うところ
+companyのdtが幅にピッタリ合わない、
+margin-inline-start,...end,など0にしてみたり、
+dlのfont-size:0、などリセットを試したが効果なし。
+申し訳ないですがお手上げ状態なのでご助言いただければ幸いです、、、泣
 */
